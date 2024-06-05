@@ -124,9 +124,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="heightLabel" destination="Xcz-1j-2c9" id="n01-0A-Ti2"/>
                         <outlet property="heightSlider" destination="Pky-qY-oVp" id="4Va-X5-46e"/>
-                        <outlet property="userHeightLabel" destination="Xcz-1j-2c9" id="n01-0A-Ti2"/>
-                        <outlet property="userWeightLabel" destination="LTF-aL-8qu" id="7Ve-yg-OcK"/>
+                        <outlet property="weightLabel" destination="LTF-aL-8qu" id="7Ve-yg-OcK"/>
                         <outlet property="weightSlider" destination="s2X-C5-Zcz" id="cbU-ZH-fzZ"/>
                     </connections>
                 </viewController>

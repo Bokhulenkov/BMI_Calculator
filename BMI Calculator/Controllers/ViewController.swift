@@ -11,8 +11,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
     
-    @IBOutlet weak var userHeightLabel: UILabel!
-    @IBOutlet weak var userWeightLabel: UILabel!
+    @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
     
     
 
@@ -22,12 +22,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func heightSliderChanged(_ sender: UISlider) {
-        userHeightLabel.text = String(format: "%.1f", sender.value) + "m"
+        heightLabel.text = String(format: "%.2f", sender.value) + "m"
     }
     
     
     @IBAction func weightSliderChanged(_ sender: UISlider) {
-        userWeightLabel.text = String(format: "%.1f", sender.value) + "Kg"
+        weightLabel.text = String(format: "%.0f", sender.value) + "Kg"
     }
     
 
