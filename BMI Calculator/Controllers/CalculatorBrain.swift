@@ -9,11 +9,22 @@
 import Foundation
 
 struct CalculatorBrain {
-
     
-    func bmi(weight: Float, height: Float) -> String {
-        let bmi = weight / pow(height, 2)
-        return String(format: "%.1f", bmi)
+    var bmi: BMI?
+
+    func getBMIValue() -> String {
+        let bmiTo1DecimalPlace = String(format: "%.1f", bmi?.value ?? 0.0)
+        return bmiTo1DecimalPlace
+    }
+    
+    mutating func calculateBMI(height: Float, weight: Float) {
+        let bmiValue = weight / pow(height, 2)
+        bmi = BMI(value: bmiValue, advice: <#T##String#>, color: <#T##UIColor#>)
     }
     
 }
+
+
+//unerweight < 18.5
+//normal 18.5 - 24.9
+// overwieght > 24.9

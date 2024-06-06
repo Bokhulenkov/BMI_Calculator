@@ -13,7 +13,7 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     
-    let calculatorBrain = CalculatorBrain()
+    var calculatorBrain = CalculatorBrain()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,9 @@ class CalculateViewController: UIViewController {
     }
 
     @IBAction func calculatePressed(_ sender: UIButton) {
+        let height = heightSlider.value
+        let weight = weightSlider.value
+        calculatorBrain.calculateBMI(height: height, weight: weight)
 //        segue to second controller
         self.performSegue(withIdentifier: "goToResult", sender: self)
     }
@@ -37,7 +40,7 @@ class CalculateViewController: UIViewController {
 //        проверяем что переходим именно к нужному контроллеру
         if segue.identifier == "goToResult" {
             let destenationVC = segue.destination as! ResultViewController
-            destenationVC.bmiValue = calculatorBrain.bmi(weight: weightSlider.value, height: heightSlider.value)
+            destenationVC.bmiValue = calculatorBrain.getBMIValue()
         }
     }
     
